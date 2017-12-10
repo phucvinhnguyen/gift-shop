@@ -50,8 +50,8 @@
             <!-- BEGIN MAIN NAVIGATION -->
             <nav class="nav nav__primary">
                 <ul id="topnav" class="sf-menu">
-                    <li class="menu-item current-menu-item current_page_item"><a href="">Trang chủ</a></li>
-                    <li class="menu-item menu-item-has-children"><a href="shop/">Sản phẩm</a>
+                    <li class="menu-item current-menu-item current_page_item"><a href="/">Trang chủ</a></li>
+                    <li class="menu-item menu-item-has-children"><a href="#">Sản phẩm</a>
                         @if (!empty($categories))
                         <ul class="sub-menu">
                             @foreach($categories as $category)

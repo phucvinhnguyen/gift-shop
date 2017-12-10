@@ -8,8 +8,8 @@
                             <div class="logo-wrapper">
                                 <!-- BEGIN LOGO -->
                                 <div class="logo pull-left">
-                                    <a href="#" class="logo_h logo_h__img"><img src="{{ asset('images/logo/logo.png') }}" alt="Gifts" title="Online store"></a>
-                                    <p class="logo_tagline">Online store</p>
+                                    <a href="/" class="logo_h logo_h__img"><img src="{{ asset('images/logo/logo.png') }}" alt="Shop Trầm Hương" title="Shop Trầm Hương"></a>
+                                    <p class="logo_tagline">Trầm hương</p>
                                     <!-- Site Tagline -->
                                 </div>
                                 <!-- END LOGO -->
