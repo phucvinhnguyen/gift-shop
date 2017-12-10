@@ -55,7 +55,7 @@
                         @if (!empty($categories))
                         <ul class="sub-menu">
                             @foreach($categories as $category)
-                                <li class="menu-item"><a href="danh-muc/{{ $category->id }}">{{ $category->name }}</a></li>
+                                <li class="menu-item"><a href="{{ $category->slug }}">{{ $category->name }}</a></li>
                             @endforeach
                         </ul>
                         @endif
