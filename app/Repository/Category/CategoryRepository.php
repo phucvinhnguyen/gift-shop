@@ -10,4 +10,9 @@ class CategoryRepository extends BaseRepository implements ICategory
     {
         return Category::class;
     }
+
+    public function getCategoryBySlug($slug)
+    {
+        return $this->model->slug($slug)->first();
+    }
 }

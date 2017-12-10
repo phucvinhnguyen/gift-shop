@@ -13,5 +13,5 @@
 
 Route::group(['namespace' => 'Shop'], function () {
    Route::get('/', 'MainShopController@index')->name('shop.index');
-   Route::get('/danh-muc/{slug}', 'CategoryController@index')->name('category.index');
+   Route::get('/{reqCategory}', 'CategoryController@index')->name('category.index');
 });

@@ -21,25 +21,23 @@ class CategoryController extends Controller
         $this->categoryRepo = $categoryRepo;
     }
 
-    public function index(Request $request, $slug)
+    public function index(Request $request, $reqCategory)
     {
-        $products = $this->productRepo->getByCategory($slug);
+        $category = $this->categoryRepo->getCategoryBySlug($reqCategory);
 
-        $dataProduct = [];
-        foreach ($products as $product) {
-            $image = $this->productImageRepo->getActiveProductImage($product->id);
-            if (!empty($image)) {
-                $dataProduct = [
-                    'name' => $product->name,
-                    'price' => $product->price,
-                    'sale' => $product->sale,
-                    'image' => $image->url
-                ];
+        if (isset($category) && !empty($category)) {
+            $products = $this->productRepo->getByCategory($category->id);
+
+            foreach ($products as $product) {
+                $image = $this->productImageRepo->getActiveProductImage($product->id);
+                if (!empty($image)) {
+                    $product['image'] = $image->url;
+                }
             }
         }
 
         return view('pages.shop.category.index', [
-            'products' => $dataProduct,
+            'products' => $products,
             'category' => $this->categoryRepo->find($product->category_id)
         ]);
     }

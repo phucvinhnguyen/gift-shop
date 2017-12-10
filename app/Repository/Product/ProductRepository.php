@@ -13,7 +13,7 @@ class ProductRepository extends BaseRepository implements IProduct
 
     public function getByCategory($categoryId)
     {
-        return $this->model->slug($categoryId)->get();
+        return $this->model->category($categoryId)->get();
     }
 
     public function getSale()
