@@ -7,7 +7,7 @@
                     <h1 class="title-header">{{ $product->name }}</h1>
                     <!-- BEGIN BREADCRUMBS-->
                     <ul class="breadcrumb breadcrumb__t">
-                        <a href="{{ route('shop.index') }}">Home</a> / <a href="{{ route('category.index', ['reqCategory' => $category->slug]) }}">{{ $category->name }}</a> / {{ $product->name }}</ul>
+                        <a href="{{ route('shop.index') }}">Trang chủ</a> / <a href="{{ route('category.index', ['reqCategory' => $category->slug]) }}">{{ $category->name }}</a> / {{ $product->name }}</ul>
                     <!-- END BREADCRUMBS -->
                     <div class="clearfix"></div>
                 </section><!-- .title-section -->
@@ -16,22 +16,25 @@
         <div class="row">
             <div class="span9 right" id="content">
                 <div class="product">
+                    @if ($product->sale > 0)
                     <span class="onsale">Sale!</span>
+                    @endif
                     <div class="images">
-                        <a href="{{ Storage::url('public/products/1.png') }}" class="woocommerce-main-image zoom" title="" data-rel="prettyPhoto">
-                            <img width="300" height="300" src="{{ Storage::url('public/products/1.png') }}" alt="{{ $product->slug }}" title="{{ $product->slug }}">
+                        @if (!empty($productActiveImage))
+                        <a href="{{ Storage::url($productActiveImage->url) }}" class="woocommerce-main-image zoom" title="" data-rel="prettyPhoto">
+                            <img src="{{ Storage::url($productActiveImage->url) }}" alt="{{ $product->slug }}" title="{{ $product->slug }}">
                         </a>
+                        @endif
                     </div>
 
                     <div class="summary entry-summary">
                         <div>
                             <p class="price">
-                                <del><span class="amount">{{ formatCurrency($product->sale) }}</span></del>
-                                <ins><span class="amount">{{ formatCurrency($product->price) }}</span></ins>
+                                @if ($product->sale > 0)
+                                <del><span class="amount">{{ formatCurrency($product->sale) }} đ</span></del>
+                                @endif
+                                <ins><span class="amount" style="color: #ff4646">{{ formatCurrency($product->price) }} đ</span></ins>
                             </p>
-                        </div>
-                        <div itemprop="description">
-                            <p>Very high quality</p>
                         </div>
 
                         <form class="cart" method="post" enctype="multipart/form-data">

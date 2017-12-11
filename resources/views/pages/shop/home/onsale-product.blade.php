@@ -10,17 +10,16 @@
                         <a href="{{ route('product.index',['reqProduct' => $product->slug, 'id' => $product->id]) }}">
                             <div class="cherry-thumb-wrap">
                                 <span class="onsale">Sale!</span>
-                                <img src="{{ Storage::url($product['url']) }}" class="attachment-shop_catalog" alt="{{ $product['name'] }}" />
+                                <img src="{{ Storage::url($product->url) }}" class="attachment-shop_catalog" alt="{{ $product->slug }}" />
                                 <span class="price">
-                                    <del><span class="amount">{{ formatCurrency($product['sale']) }} đ</span></del>
-                                    <ins><span class="amount">{{ formatCurrency($product['price']) }} đ</span></ins>
+                                    <del><span class="amount">{{ formatCurrency($product->sale) }}đ</span></del>
+                                    <ins><span class="amount">{{ formatCurrency($product->price) }}đ</span></ins>
                                 </span>
-                                <span class="btn cherry-quick-view" data-product="1954">Quick view</span>
+                                <span class="btn cherry-quick-view">Quick view</span>
                             </div>
-                            <h3>{{ $product['name'] }}</h3>
+                            <h3>{{ $product->name }}</h3>
                         </a>
                         @include('layout.shop.product.product-button')
-
                     </li>
                     @endforeach
                 </ul>

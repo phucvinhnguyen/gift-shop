@@ -26,7 +26,7 @@
                                     <strong>Ngân Vinh Inc.<br /></strong>
                                     Chung cư <strong>Hưng Phát</strong><br/>
                                         <strong>928 Lê Văn Lương, Huyện Nhà Bè, TP. Hồ Chí Minh.</strong><br />
-                                    Telephone: +84 8888 5355<br />
+                                    Điện thoại: +849 8888 5355<br />
                                     E-mail: <a href="mailto:info@tramhuongnganvinh.com">info@tramhuongnganvinh.com</a><br />
                                 </address><!-- address (end) -->
                             </div>

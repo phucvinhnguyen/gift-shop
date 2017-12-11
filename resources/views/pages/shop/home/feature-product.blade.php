@@ -7,16 +7,16 @@
                 <li class="product type-product wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.15s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.15s; animation-name: fadeIn;">
                     <a href="{{ route('product.index',['reqProduct' => $product->slug, 'id' => $product->id]) }}">
                         <div class="cherry-thumb-wrap">
-                            <img src="{{ Storage::url($product->url) }}" class="attachment-shop_catalog" alt="{{ $product->name }}">
+                            <img src="{{ Storage::url($product->url) }}" class="attachment-shop_catalog" alt="{{ $product->slug }}">
                             <span class="price">
                                 @if ($product->sale > 0)
-                                    <ins><span class="amount">{{ formatCurrency($product->price) }}</span></ins>
-                                    <del><span class="amount">{{ formatCurrency($product->sale) }}</span></del>
+                                    <ins><span class="amount">{{ formatCurrency($product->price) }}đ</span></ins>
+                                    <del><span class="amount">{{ formatCurrency($product->sale) }}đ</span></del>
                                 @else
                                     <span class="amount">{{ formatCurrency($product->price) }}</span>
                                 @endif
                             </span>
-                            <span class="btn cherry-quick-view" data-product="1958">Xem nhanh</span>
+                            <span class="btn cherry-quick-view">Xem nhanh</span>
                         </div>
                         <h3>{{ $product['name'] }}</h3>
                     </a>
