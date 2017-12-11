@@ -29,8 +29,8 @@
 
             <ul class="products">
                 @foreach($products as $product)
-                <li class="product instock">
-                    <a href="https://livedemo00.template-help.com/woocommerce_53330/product/product-1/">
+                <li class="product fadeIn animated">
+                    <a href="#">
                         <div class="cherry-thumb-wrap">
                             <img width="300" height="300" src="{{ Storage::url($product['image']) }}" class="attachment-shop_catalog" alt="{{ $product['name'] }}">
                             <span class="onsale">Sale!</span>

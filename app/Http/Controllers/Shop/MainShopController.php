@@ -29,9 +29,6 @@ class MainShopController extends Controller
         $newProducts = $this->product->getNewProduct(10);
         $saleProducts = $this->product->getSale();
 
-        $dataNewProduct = [];
-        $dataSaleProduct = [];
-
         if (empty($newProducts) && empty($saleProduct)) {
             return view('pages.shop.home.index', [
                 'banners' => $this->banner->loadActiveBanner(),
@@ -42,32 +39,22 @@ class MainShopController extends Controller
         foreach ($newProducts as $product) {
             $image = $this->productImage->getActiveProductImage($product->id);
             if (!empty($image)) {
-                $dataNewProduct = [
-                    'name' => $product->name,
-                    'price' => $product->price,
-                    'sale' => $product->sale,
-                    'image' => $image
-                ];
+               $product['image'] = $image;
             }
         }
 
         foreach ($saleProducts as $product) {
             $image = $this->productImage->getActiveProductImage($product->id);
             if (!empty($image)) {
-                $dataSaleProduct = [
-                    'name' => $product->name,
-                    'price' => $product->price,
-                    'sale' => $product->sale,
-                    'image' => $image
-                ];
+                $product['image'] = $image;
             }
         }
 
         return view('pages.shop.home.index', [
             'banners' => $this->banner->loadActiveBanner(),
             'shopServices' => $this->shopService->getActiveShopService(),
-            'newProducts' => $dataNewProduct,
-            'saleProducts' => $dataSaleProduct
+            'newProducts' => $newProducts,
+            'saleProducts' => $saleProducts
         ]);
     }
 }
