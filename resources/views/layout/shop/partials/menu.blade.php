@@ -67,7 +67,7 @@
                         </ul>
                     </li>
                     <li class="menu-item"><a href="bai-viet/">Bài viết</a></li>
-                    <li class="menu-item"><a href="lien-he/">Liên hệ</a></li>
+                    <li class="menu-item"><a href="{{ route('shop.contact') }}">Liên hệ</a></li>
                 </ul>
             </nav><!-- END MAIN NAVIGATION -->
         </div>
