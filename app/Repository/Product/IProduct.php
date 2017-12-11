@@ -9,4 +9,8 @@ interface IProduct
     public function getSale();
 
     public function getNewProduct($limit);
+
+    public function getBySlug($slug);
+
+    public function getRelatedProduct($excepId, $categoryId, $limit);
 }

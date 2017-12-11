@@ -5,7 +5,7 @@
             <ul class="products">
                 @foreach($newProducts as $product)
                 <li class="product type-product wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.15s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.15s; animation-name: fadeIn;">
-                    <a href="#">
+                    <a href="{{ route('product.index',['reqProduct' => $product->slug, 'id' => $product->id]) }}">
                         <div class="cherry-thumb-wrap">
                             <img src="{{ Storage::url($product->url) }}" class="attachment-shop_catalog" alt="{{ $product->name }}">
                             <span class="price">

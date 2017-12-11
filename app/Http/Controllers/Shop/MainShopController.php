@@ -26,7 +26,7 @@ class MainShopController extends Controller
 
     public function index(Request $request)
     {
-        $newProducts = $this->product->getNewProduct(10);
+        $newProducts = $this->product->getNewProduct(12);
         $saleProducts = $this->product->getSale();
 
         if (empty($newProducts) && empty($saleProduct)) {

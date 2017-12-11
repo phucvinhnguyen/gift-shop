@@ -7,7 +7,7 @@
                 <ul class="products owl-carousel">
                 @foreach($saleProducts as $product)
                     <li class="product type-product sale instock">
-                        <a href="">
+                        <a href="{{ route('product.index',['reqProduct' => $product->slug, 'id' => $product->id]) }}">
                             <div class="cherry-thumb-wrap">
                                 <span class="onsale">Sale!</span>
                                 <img src="{{ Storage::url($product['url']) }}" class="attachment-shop_catalog" alt="{{ $product['name'] }}" />

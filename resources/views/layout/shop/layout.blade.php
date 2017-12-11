@@ -7,16 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" type="image/x-icon" href="{{ asset('/favicon.ico') }}">
+    {{--<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">--}}
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap/bootstrap.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/custom-style.css') }}">
     <style>
         .wishlist_table .add_to_cart, .yith-wcwl-add-button > a.button.alt { border-radius: 16px; -moz-border-radius: 16px; -webkit-border-radius: 16px; }
     </style>
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/flexslider/flexslider.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset('css/owl-carousel/owl.carousel.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset('css/owl-carousel/owl.theme.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset('css/font-awesome/font-awesome.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset('css/cherry-plugin.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/prettyPhoto.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset('css/style(1).css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset('css/style(2).css') }}">
@@ -80,11 +83,11 @@
     <style type="text/css">@media(max-width: 767px){.sf-menu{display:none;} .select-menu{display: block;}}</style>
 </head>
 
-<body class="home page has_shop">
+<body class="woocommerce woocommerce-page has_woocommerce has_shop">
     <div id="motopress-main" class="main-holder">
         <!--Begin #motopress-main-->
         @include('layout.shop.partials.header')
-        <div class="motopress-wrapper content-holder clearfix">
+        <div class="motopress-wrapper content-holder clearfix woocommerce">
             @yield('content')
         </div>
 
@@ -97,6 +100,8 @@
             <a href="#top"><span></span></a>
         </p>
     </div>
+    @yield('scripts')
+
     <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery/jquery.form.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
@@ -107,10 +112,14 @@
     <script type="text/javascript" src="{{ asset('js/jquery/jquery.mobilemenu.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery/jquery.magnific-popup.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery/jquery.zaccordion.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery/jquery.flexslider-min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery/jquery.prettyPhoto.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery/jquery.prettyPhoto.init.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('cherry/cherry-plugin.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/custom-script.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/wow.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/carousel/owl.carousel.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/single-product.min.js') }}"></script>
     <script>
         (function($) {
             $(window).load(function() {
