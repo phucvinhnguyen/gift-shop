@@ -16,4 +16,7 @@ Route::group(['namespace' => 'Shop'], function () {
    Route::get('/danh-muc/{reqCategory}', 'CategoryController@index')->name('category.index');
    Route::get('/san-pham/{reqProduct}/{id}', 'ProductController@index')->name('product.index');
    Route::get('/lien-he', 'ContactController@index')->name('shop.contact');
+   Route::get('/gioi-thieu/cau-hoi-dap', 'FaqsController@index')->name('shop.faq');
+   Route::get('/gioi-thieu/tram-huong', 'IntroController@index')->name('shop.intro');
+   Route::get('/bai-viet/{reqArticle?}', 'ArticleController@index')->name('blog.article');
 });

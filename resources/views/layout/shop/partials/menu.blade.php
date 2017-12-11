@@ -50,7 +50,7 @@
             <!-- BEGIN MAIN NAVIGATION -->
             <nav class="nav nav__primary">
                 <ul id="topnav" class="sf-menu">
-                    <li class="menu-item current-menu-item current_page_item"><a href="/">Trang chủ</a></li>
+                    <li class="menu-item current-menu-item current_page_item"><a href="{{ route('shop.index') }}">Trang chủ</a></li>
                     <li class="menu-item menu-item-has-children"><a href="#">Sản phẩm</a>
                         @if (!empty($categories))
                         <ul class="sub-menu">
@@ -60,13 +60,13 @@
                         </ul>
                         @endif
                     </li>
-                    <li class="menu-item menu-item-has-children"><a href="gioi-thieu/">Giới thiệu</a>
+                    <li class="menu-item menu-item-has-children"><a href="#">Giới thiệu</a>
                         <ul class="sub-menu">
-                            <li class="menu-item"><a href="gioi-thieu/tram-huong">Trầm hương</a></li>
-                            <li class="menu-item"><a href="gioi-thieu/cau-hoi">Câu hỏi thường gặp</a></li>
+                            <li class="menu-item"><a href="{{ route('shop.intro') }}">Trầm hương</a></li>
+                            <li class="menu-item"><a href="{{ route('shop.faq') }}">Câu hỏi thường gặp</a></li>
                         </ul>
                     </li>
-                    <li class="menu-item"><a href="bai-viet/">Bài viết</a></li>
+                    <li class="menu-item"><a href="{{ route('blog.article') }}">Bài viết</a></li>
                     <li class="menu-item"><a href="{{ route('shop.contact') }}">Liên hệ</a></li>
                 </ul>
             </nav><!-- END MAIN NAVIGATION -->
