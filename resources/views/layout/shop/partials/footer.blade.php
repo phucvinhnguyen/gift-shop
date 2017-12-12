@@ -6,11 +6,10 @@
                     <div class="span2">
                         <nav class="nav footer-nav">
                             <ul id="menu-footer-menu" class="menu">
-                                <li class="menu-item current-menu-item page_item current_page_item"><a href="">Trang chủ</a></li>
-                                <li class="menu-item"><a href="about/">Giới thiệu</a></li>
-                                <li class="menu-item"><a href="shop/">Sản phẩm</a></li>
-                                <li class="menu-item"><a href="blog/">Bài viết</a></li>
-                                <li class="menu-item"><a href="contacts/">Liên hệ</a></li>
+                                <li class="menu-item current-menu-item page_item current_page_item"><a href="{{ route('shop.index') }}">Trang chủ</a></li>
+                                <li class="menu-item"><a href="{{ route('shop.intro') }}">Giới thiệu</a></li>
+                                <li class="menu-item"><a href="{{ route('blog.article') }}">Bài viết</a></li>
+                                <li class="menu-item"><a href="{{ route('shop.contact') }}">Liên hệ</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -18,9 +17,8 @@
                         <div id="nav_menu-2">
                             <div class="menu-shop-menu-container">
                                 <ul id="menu-shop-menu" class="menu">
-                                    <li class="cherry-compare menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Compare</a></li>
-                                    <li class="menu-item"><a href="wishlist/">Danh sách yêu thích</a></li>
-                                    <li class="menu-item"><a href="delivery/">Giao hàng</a></li>
+                                    <li class="menu-item"><a href="delivery/">Chính sách</a></li>
+                                    <li class="menu-item"><a href="{{ route('shop.ship') }}">Giao hàng</a></li>
                                     <li class="menu-item"><a href="help/">Trợ giúp</a></li>
                                 </ul>
                             </div>

@@ -14,7 +14,7 @@
     </div>
     <div class="row">
 
-        <div class="span9 right" id="content">
+        <div class="span8 right" id="content">
             @if (isset($products) && !empty($products))
             {{--<h1 class="page-title">Home &amp; Living</h1>--}}
             <p class="woocommerce-result-count">Có tất cả {{ count($products) }} sản phẩm.</p>
@@ -47,7 +47,7 @@
             @endif
         </div>
 
-        <div class="sidebar span3" id="sidebar" data-motopress-type="static-sidebar" data-motopress-sidebar-file="sidebar.php">
+        <div class="sidebar span4" id="sidebar">
             <div id="my-recent-comments-2" class="widget">
                 <h4>Bình luận</h4>
                 <ul class="comments-custom unstyled">

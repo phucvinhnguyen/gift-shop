@@ -2,11 +2,10 @@
     <div class="shop-and-cart">
         <div class="shop-menu-wrapper">
             <div class="cherry-wc-account dropdown">
-                <a class="cherry-wc-account_title" data-toggle="dropdown" href="#">Tài khoản Khách hàng</a>
+                <a class="cherry-wc-account_title" data-toggle="dropdown" href="#">Khách hàng</a>
                 <div class="cherry-wc-account_content">
                     <ul class="cherry-wc-account_list">
                         <li class="cherry-wc-account_list_item"><a href="#">Đơn hàng</a></li>
-                        <li class="cherry-wc-account_list_item "><a href="#">So sánh sản phẩm</a></li>
                         <li class="cherry-wc-account_list_item"><a href="#">Danh sách yêu thích</a></li>
                     </ul>
                     <div class="cherry-wc-account_auth"><a href="#" class="not-logged">Đăng ký tài khoản</a></div>
@@ -14,9 +13,7 @@
             </div>
             <div class="shop-nav">
                 <ul id="shopnav" class="shop-menu">
-                    <li class="cherry-compare menu-item"><a href="#">So sánh</a></li>
-                    <li class="menu-item"><a href="#">Danh sách yêu thích</a></li>
-                    <li class="menu-item"><a href="#">Giao hàng</a></li>
+                    <li class="menu-item"><a href="{{ route('shop.ship') }}">Giao hàng</a></li>
                     <li class="menu-item"><a href="#">Trợ giúp</a></li>
                 </ul>
             </div>
@@ -25,8 +22,16 @@
             <div id="woocommerce_widget_cart-3" class="cart-holder">
                 <h3 unselectable="on" style="user-select: none;">Giỏ hàng</h3>
                 <div class="widget_shopping_cart_content">
+                    @foreach (Cart::content() as $product)
+                        <li>
+                            <a href="#">×</a>
+                            <a href="#">
+                                <img width="90" height="90" src="//livedemo00.template-help.com/woocommerce_53330/wp-content/uploads/2013/09/Artisan-Cheese-Hamper_3-90x90.png" class="attachment-shop_thumbnail wp-post-image" alt="Artisan Cheese Hamper_3">Artisan Cheese</a>
+                            <span class="quantity">1 × <span class="amount">$70.00</span></span>
+                        </li>
+                    @endforeach
                     <!-- begin product list -->
-                    <ul class="cart_list product_list_widget ">
+                    <ul class="cart_list product_list_widget">
                         <li class="empty">Chưa chọn sản phẩm.</li>
                     </ul>
                     <!-- end product list -->

@@ -83,7 +83,7 @@
     <style type="text/css">@media(max-width: 767px){.sf-menu{display:none;} .select-menu{display: block;}}</style>
 </head>
 
-<body class="woocommerce woocommerce-page has_woocommerce has_shop">
+<body class="single single-product woocommerce woocommerce-page has_woocommerce has_shop">
     <div id="motopress-main" class="main-holder">
         <!--Begin #motopress-main-->
         @include('layout.shop.partials.header')
@@ -119,7 +119,7 @@
     <script type="text/javascript" src="{{ asset('js/custom-script.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/wow.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/carousel/owl.carousel.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/single-product.min.js') }}"></script>
+
     <script>
         (function($) {
             $(window).load(function() {
