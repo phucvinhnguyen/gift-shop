@@ -22,18 +22,32 @@
             <div id="woocommerce_widget_cart-3" class="cart-holder">
                 <h3 unselectable="on" style="user-select: none;">Giỏ hàng</h3>
                 <div class="widget_shopping_cart_content">
-                    @foreach (Cart::content() as $product)
-                        <li>
-                            <a href="#">×</a>
-                            <a href="#">
-                                <img width="90" height="90" src="//livedemo00.template-help.com/woocommerce_53330/wp-content/uploads/2013/09/Artisan-Cheese-Hamper_3-90x90.png" class="attachment-shop_thumbnail wp-post-image" alt="Artisan Cheese Hamper_3">Artisan Cheese</a>
-                            <span class="quantity">1 × <span class="amount">$70.00</span></span>
-                        </li>
-                    @endforeach
+                    @if (count(Cart::content()) > 0)
+                    <ul class="cart_list product_list_widget">
+                        @foreach (Cart::content() as $product)
+                            <li>
+                                <a href="#" class="remove" title="Remove this item">×</a>
+                                <a href="{{ route('product.index', ['reqProduct' => $product->options->slug, 'id' => $product->id]) }}">
+                                    <img width="90" height="90" src="//livedemo00.template-help.com/woocommerce_53330/wp-content/uploads/2013/09/Artisan-Cheese-Hamper_3-90x90.png" class="attachment-shop_thumbnail wp-post-image" alt="Artisan Cheese Hamper_3">
+                                    {{ $product->name }} </a>
+                                <span class="quantity">1 × <span class="amount">{{ formatCurrency($product->price) }}đ</span></span>
+                            </li>
+                        @endforeach
+                    </ul>
+                    <p class="total"><strong>Tạm tính: </strong>
+                        <span class="amount">{{ Cart::subtotal(0, '.', ',') }}đ</span>
+                    </p>
+                    <p class="buttons">
+                        <a href="{{ route('product.cart') }}" class="button wc-forward">Giỏ hàng</a>
+                        <a href="" class="button checkout wc-forward">Thanh toán</a>
+                    </p>
+                    @else
+
                     <!-- begin product list -->
                     <ul class="cart_list product_list_widget">
                         <li class="empty">Chưa chọn sản phẩm.</li>
                     </ul>
+                    @endif
                     <!-- end product list -->
                 </div>
             </div>

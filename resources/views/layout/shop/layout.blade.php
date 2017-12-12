@@ -5,6 +5,7 @@
     <title>NV | @yield('title')</title>
     <meta name="description" content=" | Online store">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="icon" type="image/x-icon" href="{{ asset('/favicon.ico') }}">
     {{--<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">--}}
@@ -126,6 +127,26 @@
                 if ($('.widget_shopping_cart_content').is(':empty')) {
                     $('.widget_shopping_cart_content').text('No products in the cart.');
                 }
+            });
+
+            $('.add_to_cart_button').click(function () {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+               var productId = $(this).data('product_id');
+               $.ajax({
+                   type: 'POST',
+                   url: '{{ route('product.cart.add') }}',
+                   data: {
+                       product_id: productId
+                   },
+                   dataType: 'json',
+                   success: function (data) {
+                       console.log(data);
+                   }
+               })
             });
         })(jQuery);
     </script>

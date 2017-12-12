@@ -4,11 +4,7 @@
         <div class="row">
             <div class="span12">
                 <section class="title-section">
-                    <h1 class="title-header">{{ $product->name }}</h1>
-{{--                    <!-- BEGIN BREADCRUMBS-->
-                    <ul class="breadcrumb breadcrumb__t">
-                        <a href="{{ route('shop.index') }}">Trang chủ</a> / <a href="{{ route('category.index', ['reqCategory' => $category->slug]) }}">{{ $category->name }}</a> / {{ $product->name }}</ul>
-                    <!-- END BREADCRUMBS -->--}}
+                    <h3 class="title-header">{{ $product->name }}</h3>
                     <div class="clearfix"></div>
                 </section><!-- .title-section -->
             </div>
@@ -33,10 +29,9 @@
                                 @if ($product->sale > 0)
                                     <del><span class="amount">{{ formatCurrency($product->sale) }} đ</span></del>
                                 @endif
-                                <ins><span class="amount" style="color: #ff4646">{{ formatCurrency($product->price) }} đ</span></ins>
+                                <ins><span class="amount" style="font-size: 25px; color: #ff4646">{{ formatCurrency($product->price) }} đ</span></ins>
                             </p>
                         </div>
-
                         <form class="cart" method="post" enctype="multipart/form-data">
                             <div class="quantity">
                                 <input type="number" step="1" min="1" name="quantity" value="1" title="Qty" class="input-text qty text" size="4">
@@ -45,9 +40,8 @@
                             <button type="submit" class="single_add_to_cart_button button alt">Mua</button>
                         </form>
                         <div class="clear"></div>
-
                         <div class="product_meta">
-                            <span class="posted_in">Danh mục: <a href="{{ $category->slug }}" rel="tag">{{ $category->name }}</a>.</span>
+                            <span class="posted_in">Danh mục: <a href="{{ route('category.index', ['reqCategory' => $category->slug]) }}" rel="tag">{{ $category->name }}</a>.</span>
                             <span class="tagged_as">Tags: {{ $product->tags }}</span>
                         </div>
 
@@ -88,7 +82,6 @@
                                 <div class="clear"></div>
                             </div>
                         </div>
-
                         <div class="panel entry-content" id="tab-cherry_wc_video" style="display: none;"></div>
                     </div>
 
@@ -105,7 +98,7 @@
                                         <span class="btn btn-sm cherry-quick-view">Xem nhanh</span></div>
                                     <h3>{{ $relatedProduct->name }}</h3>
                                 </a>
-                                @include('layout.shop.product.product-button')
+                                @include('layout.shop.product.product-button', ['id' => $product->id])
                             </li>
                             @endforeach
                         </ul>

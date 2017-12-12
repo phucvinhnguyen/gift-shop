@@ -20,7 +20,7 @@
                         </div>
                         <h3>{{ $product['name'] }}</h3>
                     </a>
-                    @include('layout.shop.product.product-button')
+                    @include('layout.shop.product.product-button', ['id' => $product->id])
                 </li>
                 @endforeach
             </ul>

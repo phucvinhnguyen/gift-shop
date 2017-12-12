@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="span9 right right" id="content">
+                <div class="span12 right right" id="content">
                     <article class="post">
                         <figure class="featured-thumbnail thumbnail large" >
                             <img src="//" data-src="{{ Storage::url('public/products/1.png') }}" alt="Aliquam erat volutpat" >
@@ -35,6 +35,7 @@
                         <div class="post_meta meta_type_line">
                             <div class="post_meta_unite clearfix">
                                 <div class="meta_group clearfix">
+
                                     <div class="post_category">
                                         <i class="icon-bookmark"></i>
                                         <a href="#" rel="category tag">Uncategorized</a>
@@ -51,6 +52,7 @@
                                         <i class="icon-comments"></i>
                                         <a href="#" class="comments-link"  title="Comment on Aliquam erat volutpat">3 comments</a>
                                     </div>
+
                                 </div>
                                 <div class="meta_group clearfix"></div>
                                 <div class="meta_group clearfix"></div>
@@ -99,7 +101,7 @@
                     </div><!-- BEGIN Comments -->--}}
 
                 </div>
-                <div class="span3 sidebar" id="sidebar" data-motopress-type="static-sidebar"  data-motopress-sidebar-file="sidebar.php">
+                {{--<div class="span3 sidebar" id="sidebar" data-motopress-type="static-sidebar"  data-motopress-sidebar-file="sidebar.php">
 
                     <div id="my-recent-comments-2" class="widget">
                         <h3>Recent comments</h3>
@@ -112,7 +114,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div>--}}
             </div>
         </div>
     </div>

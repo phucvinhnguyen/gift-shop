@@ -1,1 +1,1 @@
-<a href="#" rel="nofollow" data-product_id="1958" class="button add_to_cart_button product_type_simple">Thêm vào giỏ</a>
+<a href="#" data-product_id="{{ $id }}" class="btn add_to_cart_button">Thêm vào giỏ</a>

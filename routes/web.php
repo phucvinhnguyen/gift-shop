@@ -16,7 +16,8 @@ Route::group(['namespace' => 'Shop'], function () {
    Route::get('/', 'MainShopController@index')->name('shop.index');
    Route::get('/danh-muc/{reqCategory}', 'CategoryController@index')->name('category.index');
    Route::get('/san-pham/{reqProduct}/{id}', 'ProductController@index')->name('product.index');
-   Route::get('/cart', 'CartController@index')->name('product.cart');
+   Route::get('/cart', 'CartController@cart')->name('product.cart');
+   Route::post('/cart/add', 'CartController@add')->name('product.cart.add');
    Route::get('/checkout', 'CheckoutController@index')->name('product.checkout');
    Route::get('/lien-he', 'ContactController@index')->name('shop.contact');
 

@@ -15,11 +15,11 @@
                                     <del><span class="amount">{{ formatCurrency($product->sale) }}đ</span></del>
                                     <ins><span class="amount">{{ formatCurrency($product->price) }}đ</span></ins>
                                 </span>
-                                <span class="btn cherry-quick-view">Quick view</span>
+                                <span class="btn btn-sm cherry-quick-view">Xem nhanh</span>
                             </div>
                             <h3>{{ $product->name }}</h3>
                         </a>
-                        @include('layout.shop.product.product-button')
+                        @include('layout.shop.product.product-button', ['id' => $product->id])
                     </li>
                     @endforeach
                 </ul>
