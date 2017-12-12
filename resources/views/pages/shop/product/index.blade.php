@@ -5,16 +5,16 @@
             <div class="span12">
                 <section class="title-section">
                     <h1 class="title-header">{{ $product->name }}</h1>
-                    <!-- BEGIN BREADCRUMBS-->
+{{--                    <!-- BEGIN BREADCRUMBS-->
                     <ul class="breadcrumb breadcrumb__t">
                         <a href="{{ route('shop.index') }}">Trang chủ</a> / <a href="{{ route('category.index', ['reqCategory' => $category->slug]) }}">{{ $category->name }}</a> / {{ $product->name }}</ul>
-                    <!-- END BREADCRUMBS -->
+                    <!-- END BREADCRUMBS -->--}}
                     <div class="clearfix"></div>
                 </section><!-- .title-section -->
             </div>
         </div>
         <div class="row">
-            <div class="span9 right" id="content">
+            <div class="span12 right" id="content">
                 <div class="product">
                     @if ($product->sale > 0)
                     <span class="onsale">Sale!</span>
@@ -31,7 +31,7 @@
                         <div>
                             <p class="price">
                                 @if ($product->sale > 0)
-                                <del><span class="amount">{{ formatCurrency($product->sale) }} đ</span></del>
+                                    <del><span class="amount">{{ formatCurrency($product->sale) }} đ</span></del>
                                 @endif
                                 <ins><span class="amount" style="color: #ff4646">{{ formatCurrency($product->price) }} đ</span></ins>
                             </p>
@@ -42,13 +42,13 @@
                                 <input type="number" step="1" min="1" name="quantity" value="1" title="Qty" class="input-text qty text" size="4">
                             </div>
                             <input type="hidden" name="add-to-cart" value="">
-                            <button type="submit" class="button btn-sm">Mua</button>
+                            <button type="submit" class="single_add_to_cart_button button alt">Mua</button>
                         </form>
                         <div class="clear"></div>
 
                         <div class="product_meta">
                             <span class="posted_in">Danh mục: <a href="{{ $category->slug }}" rel="tag">{{ $category->name }}</a>.</span>
-                            <span class="tagged_as">Tags: <a href="#" rel="tag">Lorem ipsum</a>, <a href="#" rel="tag">Sed blandit massa</a>, <a href="#" rel="tag">vel mauris</a>.</span>
+                            <span class="tagged_as">Tags: {{ $product->tags }}</span>
                         </div>
 
                         <!-- .share-buttons -->
@@ -65,11 +65,9 @@
                             <li class="description_tab active">
                                 <a href="#tab-description">Mô tả</a>
                             </li>
-
                             <li class="reviews_tab">
                                 <a href="#tab-reviews">Đánh giá (0)</a>
                             </li>
-
                             <li class="cherry_wc_video_tab">
                                 <a href="#tab-cherry_wc_video">Hình ảnh</a>
                             </li>
@@ -90,6 +88,7 @@
                                 <div class="clear"></div>
                             </div>
                         </div>
+
                         <div class="panel entry-content" id="tab-cherry_wc_video" style="display: none;"></div>
                     </div>
 
@@ -103,7 +102,7 @@
                                         <img width="300" height="300" src="" class="attachment-shop_catalog wp-post-image" alt="{{ $relatedProduct->slug }}">
                                         <span class="price">
                                             <span class="amount">{{ $relatedProduct->price }}</span></span>
-                                        <span class="btn cherry-quick-view">Xem nhanh</span></div>
+                                        <span class="btn btn-sm cherry-quick-view">Xem nhanh</span></div>
                                     <h3>{{ $relatedProduct->name }}</h3>
                                 </a>
                                 @include('layout.shop.product.product-button')
@@ -114,7 +113,7 @@
                 </div><!-- #product-1919 -->
             </div>
 
-            <div class="sidebar span3" id="sidebar">
+            {{--<div class="sidebar span3" id="sidebar">
                 <div id="my-recent-comments-2" class="widget">
                     <h3>Recent comments</h3>
                     <ul class="comments-custom unstyled">
@@ -126,11 +125,12 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div>--}}
         </div>
     </div>
 @endsection
 @section('scripts')
+    <script type="text/javascript" src="{{ asset('js/single-product.min.js') }}"></script>
     <script type='text/javascript'>
         /* <![CDATA[ */
         var wc_single_product_params = {"i18n_required_rating_text":"Please select a rating","review_rating_required":"yes"};

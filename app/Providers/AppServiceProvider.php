@@ -28,5 +28,6 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('App\Repository\Product\IProductImage', 'App\Repository\Product\ProductImageRepository');
         $this->app->bind('App\Repository\Banner\IBanner', 'App\Repository\Banner\BannerImageRepository');
         $this->app->bind('App\Repository\Service\IShopService', 'App\Repository\Service\ShopServiceRepository');
+        $this->app->bind('App\Repository\Intro\IShopIntro', 'App\Repository\Intro\ShopIntroRepository');
     }
 }
