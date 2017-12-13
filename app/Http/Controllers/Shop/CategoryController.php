@@ -38,7 +38,7 @@ class CategoryController extends Controller
 
         return view('pages.shop.category.index', [
             'products' => $products,
-            'category' => $this->categoryRepo->find($product->category_id)
+            'category' => $category
         ]);
     }
 }

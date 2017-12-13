@@ -1,1 +1,1 @@
-<a href="#" data-product_id="{{ $id }}" class="btn add_to_cart_button">Thêm vào giỏ</a>
+<a href="#" data-product_id="{{ $id }}" class="btn btn-success" data-price="25.99">Thêm vào giỏ</a>
