@@ -8,14 +8,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="icon" type="image/x-icon" href="{{ asset('/favicon.ico') }}">
-    {{--<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">--}}
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap/bootstrap.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
+{{--    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap/bootstrap.css') }}">--}}
+    {{--<link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">--}}
     <link rel="stylesheet" type="text/css" href="{{ asset('css/custom-style.css') }}">
-    <style>
-        .wishlist_table .add_to_cart, .yith-wcwl-add-button > a.button.alt { border-radius: 16px; -moz-border-radius: 16px; -webkit-border-radius: 16px; }
-    </style>
-    <link type="text/css" rel="stylesheet" href="{{ asset('css/flexslider/flexslider.css') }}">
+
     <link type="text/css" rel="stylesheet" href="{{ asset('css/owl-carousel/owl.carousel.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset('css/owl-carousel/owl.theme.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset('css/font-awesome/font-awesome.css') }}">
@@ -27,6 +24,7 @@
     <link type="text/css" rel="stylesheet" href="{{ asset('css/woocommerce-layout.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset('css/woocommerce.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset('css/main-style.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/cart/cart-style.css') }}">
 
     <script type="text/javascript" src="{{ asset('js/jquery/jquery-1.7.2.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery/jquery.easing.1.3.js') }}"></script>
@@ -96,24 +94,16 @@
         <!--End #motopress-main-->
     </div>
 
-    <div id="back-top-wrapper" class="visible-desktop">
-        <p id="back-top" style="display: block; opacity: 0.8;">
-            <a href="#top"><span></span></a>
-        </p>
-    </div>
     @yield('scripts')
 
     <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery/jquery.form.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/add-to-cart.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/jquery/jquery.cookie.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/cart-fragments.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/cart-plugin.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/superfish.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery/jquery.mobilemenu.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery/jquery.magnific-popup.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery/jquery.zaccordion.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/jquery/jquery.flexslider-min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery/jquery.prettyPhoto.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery/jquery.prettyPhoto.init.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('cherry/cherry-plugin.js') }}"></script>
@@ -123,13 +113,7 @@
 
     <script>
         (function($) {
-            $(window).load(function() {
-                if ($('.widget_shopping_cart_content').is(':empty')) {
-                    $('.widget_shopping_cart_content').text('No products in the cart.');
-                }
-            });
-
-            $('.add_to_cart_button').click(function () {
+            /*$('.add_to_cart_button').click(function () {
                 $.ajaxSetup({
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -147,7 +131,7 @@
                        console.log(data);
                    }
                })
-            });
+            });*/
         })(jQuery);
     </script>
     @yield('embed-scripts')

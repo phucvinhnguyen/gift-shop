@@ -18,10 +18,6 @@ jQuery(document).ready(function(){
 		}).trigger("resize.rainbows").css({'visibility':'visible'});
 	}
 // ---------------------------------------------------------
-// Call Magnific Popup
-// ---------------------------------------------------------
-	jQuery(".thumbnail").parent().each(function(){magnific_popup_init(jQuery(this))});
-// ---------------------------------------------------------
 // Tooltip
 // ---------------------------------------------------------
 	jQuery("[rel='tooltip']").tooltip();
@@ -50,10 +46,6 @@ jQuery(document).ready(function(){
 	jQuery('.accordion').on('hide', function (e) {
 		jQuery(this).find('.accordion-toggle').not(jQuery(e.target)).removeClass('active');
 	});
-// ---------------------------------------------------------
-// Isotope Init
-// ---------------------------------------------------------
-	jQuery("#portfolio-grid").css({"visibility" : "visible"});
 // ---------------------------------------------------------
 // Menu Android
 // ---------------------------------------------------------
@@ -108,58 +100,6 @@ jQuery(document).ready(function(){
 		}
 		img_loader();
 	}
-// ---------------------------------------------------------
-// set voting post JS
-// ---------------------------------------------------------
-	jQuery('.ajax_voting').bind('click', voitng);
-	function voitng(){
-		var item= jQuery(this),
-			item_parent = item.parents('[class*="meta_type"]'),
-			type = item.attr('date-type'),
-			item_class='user_'+type,
-			count = parseInt(jQuery('.voting_count', item).text()),
-			top_position = (type==='like') ? -18 : 18 ,
-			mark = (type==='like') ? '+' : '-',
-			post_url = item.attr('href');
-
-		jQuery('.post_like>a, .post_dislike>a', item_parent).unbind('click', voitng).removeAttr('href date-type').removeClass('ajax_voting').addClass('user_voting');
-		item.removeClass('user_voting').addClass(item_class).find('.voting_count').text(++count).append('<span class="animation_item">'+mark+'1</span>');
-		jQuery('.animation_item', item).stop(true).animate({'top':top_position, opacity:'0'}, 500, 'easeOutCubic', function(){jQuery(this).remove()});
-
-		jQuery.post(post_url);
-		return false;
-	}
-// ---------------------------------------------------------
-// Contact form loader
-// ---------------------------------------------------------
-	jQuery('.wpcf7-submit').after('<div class="ajax-loader"></div>');
-	jQuery('.wpcf7-submit').click(function(){
-		var listener = setInterval(
-				function(){
-					if(jQuery('img.ajax-loader').css('visibility')=='visible'){
-						jQuery('div.ajax-loader').css({'display':'inline-block'});
-					}else{
-						jQuery('div.ajax-loader').css({'display':'none'});
-						clearInterval(listener);
-					}
-				},100);
-	})
-// ---------------------------------------------------------
-// Contact form notvalid tip fadeOut
-// ---------------------------------------------------------
-	jQuery(function() {
-		// clear cf7 error msg on mouseover
-		jQuery(".wpcf7-form-control-wrap").on("mouseover", function(){
-			jQuery("span.wpcf7-not-valid-tip", this).fadeOut();
-		});
-	});
-// ---------------------------------------------------------
-// Cookie Banner
-// ---------------------------------------------------------
-	jQuery('#cf-cookie-banner .close').click(function() {
-		createCookie('cf-cookie-banner', 1, 365);
-	});
-});
 // ---------------------------------------------------------
 // Magnific Popup Init
 // ---------------------------------------------------------

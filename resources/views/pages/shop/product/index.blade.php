@@ -6,7 +6,7 @@
                 <section class="title-section">
                     <h3 class="title-header">{{ $product->name }}</h3>
                     <div class="clearfix"></div>
-                </section><!-- .title-section -->
+                </section>
             </div>
         </div>
         <div class="row">
@@ -124,9 +124,4 @@
 @endsection
 @section('scripts')
     <script type="text/javascript" src="{{ asset('js/single-product.min.js') }}"></script>
-    <script type='text/javascript'>
-        /* <![CDATA[ */
-        var wc_single_product_params = {"i18n_required_rating_text":"Please select a rating","review_rating_required":"yes"};
-        /* ]]> */
-    </script>
 @endsection

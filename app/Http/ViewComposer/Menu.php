@@ -16,6 +16,6 @@ class Menu
 
     public function compose(View $view)
     {
-        $view->with('categories', $this->categories->getAll());
+        return $view->with('categories', $this->categories->getAll());
     }
 }
