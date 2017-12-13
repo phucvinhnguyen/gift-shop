@@ -13,6 +13,7 @@
                             <li class="divider"></li>
                             <li class="active">Liên hệ</li>
                         </ul><!-- END BREADCRUMBS -->
+                        <div class="clearfix"></div>
                     </section><!-- .title-section -->
                 </div>
             </div>

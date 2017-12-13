@@ -14,6 +14,7 @@
                             <li><a href="">Uncategorized</a></li><li class="divider"></li><li class="active">Aliquam erat volutpat</li>
                         </ul>--}}
                         <!-- END BREADCRUMBS -->
+                        <div class="clearfix"></div>
                     </section><!-- .title-section -->
                 </div>
             </div>

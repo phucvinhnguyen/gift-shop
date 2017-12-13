@@ -14,6 +14,7 @@
                             <li class="divider"></li> <li class="active">Câu hỏi thường gặp</li>
                         </ul>--}}
                         <!-- END BREADCRUMBS -->
+                        <div class="clearfix"></div>
                     </section><!-- .title-section -->
                 </div>
             </div>

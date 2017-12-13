@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="span12">
                     <section class="title-section">
-                        <h1 class="title-header">Giới thiệu</h1>
+                        <h2 class="title-header"> Giới thiệu</h2>
                         <!-- BEGIN BREADCRUMBS-->
                         {{--<ul class="breadcrumb breadcrumb__t">
                             <li><a href="https://livedemo00.template-help.com/woocommerce_53330">Home</a></li>
@@ -14,6 +14,7 @@
                             <li class="divider"></li> <li class="active">Câu hỏi thường gặp</li>
                         </ul>--}}
                         <!-- END BREADCRUMBS -->
+                        <div class="clearfix"></div>
                     </section><!-- .title-section -->
                 </div>
             </div>

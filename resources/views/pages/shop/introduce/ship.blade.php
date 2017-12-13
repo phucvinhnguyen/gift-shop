@@ -7,6 +7,7 @@
                     <div class="span12">
                         <section class="title-section">
                             <h1 class="title-header">Chính sách giao hàng</h1>
+                            <div class="clearfix"></div>
                         </section><!-- .title-section -->
                     </div>
                 </div>
