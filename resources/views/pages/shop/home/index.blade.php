@@ -2,16 +2,18 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="span12">
+        <div class="col-lg-12">
             <div class="row">
-                <div class="span12">
-                    <section class="title-section"></section>
+                <div class="col-lg-12">
+                    <section class="title-section">
+                    </section>
+
                     <div class="page type-page">
                         {{--Banner menu--}}
                         @if (!empty($banners))
                         <div class="banners_wrapper">
                             <div class="banners_wrapper_wrap_inner">
-                                <div class="row ">
+                                <div class="row">
                                     @foreach($banners as $banner)
                                     <div class="col-lg-4">
                                         <div class="banner-wrap wow fadeIn animated" data-wow-duration="1s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;">

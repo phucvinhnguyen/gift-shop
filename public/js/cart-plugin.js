@@ -67,7 +67,8 @@ jQuery(document).ready(function($){
 			setTimeout(function(){
 				cartBody.scrollTop(0);
 				//check if cart empty to hide it
-				if( Number(cartCount.find('li').eq(0).text()) == 0) cartWrapper.addClass('empty');
+				/*if( Number(cartCount.find('li').eq(0).text()) == 0)
+					cartWrapper.addClass('empty');*/
 			}, 500);
 		} else {
 			cartWrapper.addClass('cart-open');

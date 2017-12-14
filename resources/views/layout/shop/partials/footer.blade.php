@@ -1,9 +1,9 @@
 <footer class="motopress-wrapper footer">
     <div class="container">
         <div class="row">
-            <div class="span12">
+            <div class="col-lg-12">
                 <div class="row footer-widgets">
-                    <div class="span2">
+                    <div class="col-lg-2">
                         <nav class="nav footer-nav">
                             <ul id="menu-footer-menu" class="menu">
                                 <li class="menu-item current-menu-item page_item current_page_item"><a href="{{ route('shop.index') }}">Trang chủ</a></li>
@@ -13,7 +13,7 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="span2">
+                    <div class="col-lg-2">
                         <div id="nav_menu-2">
                             <div class="menu-shop-menu-container">
                                 <ul id="menu-shop-menu" class="menu">
@@ -24,7 +24,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="span3">
+                    <div class="col-lg-3">
                         <ul class="social">
                             <li><a href="#" title="twitter"><i class="icon-twitter"></i></a></li>
                             <li><a href="#" title="facebook"><i class="icon-facebook"></i></a></li>
@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class="row copyright">
-                    <div class="span12">
+                    <div class="col-lg-12">
                         <div id="footer-text" class="footer-text">
                             Copyright 2018 by NV
                             <a href="#" title="Privacy Policy">Privacy Policy</a>

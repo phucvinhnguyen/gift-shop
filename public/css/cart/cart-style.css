@@ -419,9 +419,7 @@ Main Components
   content: "";
   display: block;
 }
-.cd-cart h3, .cd-cart .price {
-  font-weight: bold;
-}
+
 .cd-cart h3 {
   width: 70%;
   float: left;
@@ -429,6 +427,7 @@ Main Components
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  margin:10px;
 }
 .cd-cart h3 a {
   color: #2b3e51;

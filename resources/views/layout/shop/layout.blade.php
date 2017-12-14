@@ -9,18 +9,11 @@
 
     <link rel="icon" type="image/x-icon" href="{{ asset('/favicon.ico') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
-{{--    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap/bootstrap.css') }}">--}}
-    {{--<link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">--}}
     <link rel="stylesheet" type="text/css" href="{{ asset('css/custom-style.css') }}">
 
     <link type="text/css" rel="stylesheet" href="{{ asset('css/owl-carousel/owl.carousel.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset('css/owl-carousel/owl.theme.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset('css/font-awesome/font-awesome.css') }}">
-    <link type="text/css" rel="stylesheet" href="{{ asset('css/cherry-plugin.css') }}">
-    <link type="text/css" rel="stylesheet" href="{{ asset('css/prettyPhoto.css') }}">
-    <link type="text/css" rel="stylesheet" href="{{ asset('css/style(1).css') }}">
-    <link type="text/css" rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    <link type="text/css" rel="stylesheet" href="{{ asset('css/style(2).css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset('css/woocommerce-layout.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset('css/woocommerce.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset('css/main-style.css') }}">
@@ -29,7 +22,6 @@
     <script type="text/javascript" src="{{ asset('js/jquery/jquery-1.7.2.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery/jquery.easing.1.3.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
 
     <style type="text/css">
         body { background-color:#ffffff }
@@ -104,8 +96,6 @@
     <script type="text/javascript" src="{{ asset('js/jquery/jquery.mobilemenu.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery/jquery.magnific-popup.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery/jquery.zaccordion.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/jquery/jquery.prettyPhoto.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/jquery/jquery.prettyPhoto.init.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('cherry/cherry-plugin.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/custom-script.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/wow.js') }}"></script>
