@@ -1,46 +1,59 @@
-<footer class="motopress-wrapper footer">
+<div class="f-widget"><!--footer Widget-->
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="row footer-widgets">
-                    <div class="col-lg-2">
-                        <nav class="nav footer-nav">
-                            <ul id="menu-footer-menu" class="menu">
-                                <li class="menu-item current-menu-item page_item current_page_item"><a href="{{ route('shop.index') }}">Trang chủ</a></li>
-                                <li class="menu-item"><a href="{{ route('shop.intro') }}">Giới thiệu</a></li>
-                                <li class="menu-item"><a href="{{ route('blog.article') }}">Bài viết</a></li>
-                                <li class="menu-item"><a href="{{ route('shop.contact') }}">Liên hệ</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="col-lg-2">
-                        <div id="nav_menu-2">
-                            <div class="menu-shop-menu-container">
-                                <ul id="menu-shop-menu" class="menu">
-                                    <li class="menu-item"><a href="delivery/">Chính sách</a></li>
-                                    <li class="menu-item"><a href="{{ route('shop.ship') }}">Giao hàng</a></li>
-                                    <li class="menu-item"><a href="help/">Trợ giúp</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <ul class="social">
-                            <li><a href="#" title="twitter"><i class="icon-twitter"></i></a></li>
-                            <li><a href="#" title="facebook"><i class="icon-facebook"></i></a></li>
-                        </ul>
-                    </div>
+            <div class="col-md-6"><!--footer newsletter widget-->
+                <div class="title-widget-bg">
+                    <div class="title-widget">Nhận thông tin sản phẩm</div>
                 </div>
-                <div class="row copyright">
-                    <div class="col-lg-12">
-                        <div id="footer-text" class="footer-text">
-                            Copyright 2018 by NV
-                            <a href="#" title="Privacy Policy">Privacy Policy</a>
-                            <!-- {%FOOTER_LINK} -->
+                <div class="newsletter">
+                    <p>Đăng ký nhận thông báo sản phẩm, khuyến mãi qua email của bạn.</p>
+                    <form role="form">
+                        <div class="form-group">
+                            <label>Nhập email của bạn</label>
+                            <input type="email" class="form-control newstler-input" id="exampleInputEmail1" placeholder="Nhập email">
+                            <button class="btn btn-default btn-red btn-sm">Đăng ký</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
+            </div><!--footer newsletter widget-->
+            <div class="col-md-6"><!--footer contact widget-->
+                <div class="title-widget-bg">
+                    <div class="title-widget-cursive">NganVinh Shop</div>
+                </div>
+                <ul class="contact-widget">
+                    <li class="fmobile">+84 8888 5355<br />+84 8888 37046</li>
+                    <li class="fmail lastone">admin@tramhuongnv.com<br /></li>
+                </ul>
+            </div><!--footer contact widget-->
+        </div>
+        <div class="spacer"></div>
+    </div>
+</div><!--footer Widget-->
+<div class="footer"><!--footer-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <ul class="footermenu"><!--footer nav-->
+                    <li><a href="{{ route('shop.index') }}">Trang chủ</a></li>
+                    <li><a href="{{ route('product.cart') }}">Giỏ hàng</a></li>
+                    <li><a href="{{ route('product.checkout') }}">Thanh toán</a></li>
+                    <li><a href="{{ route('shop.contact') }}">Liên hệ</a></li>
+                </ul><!--footer nav-->
+                <div class="f-credit">&copy;All rights reserved by <a href="#">tramhuongnv.com</a></div>
+                <a href=""><div class="payment visa"></div></a>
+                <a href=""><div class="payment paypal"></div></a>
+                <a href=""><div class="payment mc"></div></a>
+                <a href=""><div class="payment nh"></div></a>
             </div>
+            <div class="col-md-3"><!--footer Share-->
+                <div class="followon">Mạng xã hội</div>
+                <div class="fsoc">
+                    <a href="#" class="ffacebook">facebook</a>
+                    <a href="#" class="fflickr">flickr</a>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+            </div><!--footer Share-->
         </div>
     </div>
-</footer>
+</div><!--footer-->

@@ -16,6 +16,7 @@ class ComposerServiceProvider extends ServiceProvider
     {
         View::composer('layout.shop.partials.menu', 'App\Http\ViewComposer\Menu');
         View::composer('layout.shop.cart.cart-modal', 'App\Http\ViewComposer\ShoppingCart');
+        View::composer('layout.shop.partials.menu', 'App\Http\ViewComposer\ShoppingCart');
     }
 
     /**

@@ -2,67 +2,78 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="span12" data-motopress-type="static" data-motopress-static-file="static/static-title.php">
-            <section class="title-section">
-                <h1 class="title-header">{{ $category->name }}</h1>
-                <!-- BEGIN BREADCRUMBS-->
-                <ul class="breadcrumb breadcrumb__t"><a href="#">Trang chủ</a> / {{ $category->name }}</ul>
-                <!-- END BREADCRUMBS -->
-                <div class="clearfix"></div>
-            </section><!-- .title-section -->
+        <div class="col-md-12">
+            <div class="page-title-wrap">
+                <div class="page-title-inner">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="bread"><a href="{{ route('shop.index') }}">Trang chủ</a> &rsaquo; Danh mục sản phẩm</div>
+                            <div class="bigtitle">{{ $category->name }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row">
-
-        <div class="span8 right" id="content">
-            @if (isset($products) && !empty($products))
-            {{--<h1 class="page-title">Home &amp; Living</h1>--}}
-            <p class="woocommerce-result-count">Có tất cả {{ count($products) }} sản phẩm.</p>
-            <form class="woocommerce-ordering" method="get">
-                <select name="orderby" class="orderby">
-                    <option value="menu_order" selected="selected">Sắp xếp</option>
-                    <option value="date">Mới nhất</option>
-                    <option value="price">Giá cao nhất</option>
-                    <option value="price-desc">Giá thấp nhất</option>
-                </select>
-            </form>
-
-            <ul class="products">
+        <div class="col-md-9"><!--Main content-->
+            <div class="title-bg">
+                <div class="title">Danh mục - {{ $category->name }}</div>
+            </div>
+            @if (count($products) > 0)
+            <div class="row prdct"><!--Products-->
                 @foreach($products as $product)
-                <li class="product fadeIn animated">
-                    <a href="{{ route('product.index',['reqProduct' => $product->slug, 'id' => $product->id]) }}">
-                        <div class="cherry-thumb-wrap">
-                            <img width="300" height="300" src="{{ Storage::url($product['image']) }}" class="attachment-shop_catalog" alt="{{ $product['name'] }}">
-                            <span class="onsale">Sale!</span>
-                            <span class="price"> <ins><span class="amount">{{ $product['price'] }}</span></ins><del><span class="amount">{{ $product['sale'] }}</span></del></span>
-                            <span class="btn cherry-quick-view">Xem nhanh</span></div>
-                        <h3>{{ $product['name'] }}</h3>
-                    </a>
-                    @include('layout.shop.product.product-button', ['id' => $product->id])
-                </li>
+                <div class="col-md-4">
+                    @if ($product->sale > 0)
+                        @include('layout.shop.product.product-sale', ['product' => $product])
+                    @else
+                        @include('layout.shop.product.product', ['product' => $product])
+                    @endif
+                </div>
                 @endforeach
-            </ul>
+            </div><!--Products-->
             @else
-                <p>Chưa có sản phẩm.</p>
+                <span>Chưa có sản phẩm.</span>
             @endif
         </div>
+        <div class="col-md-3"><!--sidebar-->
 
-        <div class="sidebar span4" id="sidebar">
-            <div id="my-recent-comments-2" class="widget">
-                <h4>Bình luận</h4>
-                <ul class="comments-custom unstyled">
-                    <li class="comments-custom_li">
-                        {{--<figure class="thumbnail featured-thumbnail"><img alt="" src="./Product Categories Home &amp; Living Archive _ Gifts_files/b263802e2004e058851acabb4111135e" class="avatar avatar-64 photo" height="64" width="64"></figure>--}}
-                        <div class="meta_format"><h4 class="comments-custom_h_author">admin</h4></div>
-                        <div class="meta_format"><time datetime="2014-05-27T08:09:00">May 27, 2014 8:09 am</time></div>
-                        <div class="clear"></div>
-                        <div class="comments-custom_txt">
-                            <a href="#" title="Go to this comment">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean...</a>
+            <div class="ads">
+
+            </div>
+
+            <div class="title-bg">
+                <div class="title">Bán chạy</div>
+            </div>
+            <div class="best-seller">
+                <ul>
+                    <li class="clearfix">
+                        <a href="#"><img src="{{ asset('images/demo-img.jpg') }}" alt="" class="img-responsive mini" /></a>
+                        <div class="mini-meta">
+                            <a href="#" class="smalltitle2">Panasonic M3</a>
+                            <p class="smallprice2">Price : $122</p>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <a href="#"><img src="{{ asset('images/demo-img.jpg') }}" alt="" class="img-responsive mini" /></a>
+                        <div class="mini-meta">
+                            <a href="#" class="smalltitle2">Panasonic M3</a>
+                            <p class="smallprice2">Price : $122</p>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <a href="#"><img src="{{ asset('images/demo-img.jpg') }}" alt="" class="img-responsive mini" /></a>
+                        <div class="mini-meta">
+                            <a href="#" class="smalltitle2">Panasonic M3</a>
+                            <p class="smallprice2">Price : $122</p>
                         </div>
                     </li>
                 </ul>
             </div>
-        </div>
+
+        </div><!--sidebar-->
     </div>
+    <div class="spacer"></div>
 </div>
+
 @endsection
